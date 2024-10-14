@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy 5-Month Anniversary</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        body {
+        margin: 0;
+        font-family: "Arial", sans-serif;
+        background: linear-gradient(to bottom, #f9d423, #ff4e50);
+        overflow-x: hidden;
+      }
+      header {
+        text-align: center;
+        padding: 50px;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: #fff;
+      }
+      header h1 {
+        font-size: 3em;
+        font-family: 'Pacifico', cursive;
+        color: red;
+        margin: 0;
+      }
+      .countdown {
+        font-size: 1.4em;
+        color: #add8e6;
+        margin: 20px 0;
+      }
+      .carousel {
+        display: flex;
+        overflow-x: auto;
+        padding: 20px;
+        gap: 15px;
+      }
+      .carousel img {
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        width: 280px;
+        height: auto;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .carousel img:hover {
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+      }
+      .carousel::-webkit-scrollbar {
+        display: none;
+      }
+      .shayari {
+        text-align: center;
+        font-size: 1.6em;
+        margin: 40px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 15px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      }
+      .shayari p {
+        color: #ffe4e1;
+        line-height: 1.5;
+      }
+      .hearts {
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 100%;
+        overflow: hidden;
+        transform: translateX(-50%);
+        pointer-events: none;
+      }
+      .heart {
+        z-index: 1;
+        width: 30px;
+        height: 30px;
+        background-color: rgba(255, 105, 180, 0.8);
+        position: absolute;
+        bottom: 0;
+        animation: float 6s infinite;
+        border-radius: 50%;
+      }
+      .heart.small {
+        width: 15px;
+        height: 15px;
+        animation-duration: 4s;
+      }
+      .heart.large {
+        width: 60px;
+        height: 60px;
+        animation-duration: 8s;
+      }
+      @keyframes float {
+        0% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-1000px) rotate(720deg);
+          opacity: 0;
+        }
+      }
+      .message {
+        text-align: center;
+        margin: 40px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+        position: relative;
+      }
+      .message button {
+        padding: 10px 20px;
+        background-color: #ff1493;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        animation: glow 2s infinite alternate;
+        font-size: 1.2em;
+      }
+      @keyframes glow {
+        0% {
+          box-shadow: 0 0 10px #ff1493;
+        }
+        100% {
+          box-shadow: 0 0 20px #ff1493;
+        }
+      }
+      .confetti {
+        display: none;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        pointer-events: none;
+      }
+      .confetti div {
+        width: 10px;
+        height: 10px;
+        background-color: red;
+        position: absolute;
+        animation: fall 5s linear infinite;
+      }
+      @keyframes fall {
+        0% {
+          top: -10px;
+          left: calc(100% * var(--x));
+          opacity: 1;
+        }
+        100% {
+          top: 100%;
+          left: calc(100% * var(--x));
+          opacity: 0;
+        }
+      }
+      .sparkle {
+        width: 15px;
+        height: 15px;
+        background-color: gold;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        opacity: 0;
+        animation: sparkle 2s infinite;
+      }
+      @keyframes sparkle {
+        0% {
+          opacity: 1;
+          transform: scale(0.5);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(1.5);
+        }
+      }
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.3);
+        font-size: 1.2em;
+        color: #ffe4e1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fireworks"></div>
+
+    <header>
+      <h1>Happy 5-Month Anniversary, Ikkkuuu!</h1>
+      <p>Here's to the best 5 months of my life ❤️</p>
+      <div class="countdown" id="countdown"></div>
+    </header>
+
+    <!-- Moments Carousel -->
+    <section class="carousel">
+      <img
+        src="./asset/WhatsApp Image 2024-10-14 at 10.45.41 PM.jpeg"
+        alt="Memory 1"
+      />
+      <img
+        src="./asset/WhatsApp Image 2024-10-14 at 10.45.53 PM.jpeg"
+        alt="Memory 2"
+      />
+      <img
+        src="./asset/WhatsApp Image 2024-10-14 at 10.45.54 PM (1).jpeg"
+        alt="Memory 3"
+      />
+      <img
+        src="./asset/WhatsApp Image 2024-10-14 at 10.45.54 PM.jpeg"
+        alt="Memory 4"
+      />
+      <img
+        src="./asset/WhatsApp Image 2024-10-14 at 10.48.55 PM.jpeg"
+        alt="Memory 4"
+      />
+    </section>
+
+    <!-- Shayari Section -->
+    <section class="shayari">
+      <p>
+        Five Months with You, My Heart's Delight <br />
+        In every glance I find my world anew, <br />
+        Each day a treasure spent with you. <br />
+        Your laughter a melody so sweet,<br />
+        Turns ordinary moments into a rhythmic beat.<br /><br />
+
+        Five months we have journeyed hand in hand,<br />
+        Through smiles and silence we have learned to understand.<br />
+        Like stars that paint the evening skies,<br />
+        You light up my world with your sparkling eyes.<br /><br />
+
+        Your love, a warmth that holds me near,<br />
+        In every whisper it's crystal clear.<br />
+        That no matter the distance big or small,<br />
+        With you, my heart feels ten feet tall.<br /><br />
+
+        Ikkkuuu, my penguin, my sweetest dove,<br />
+        You've filled these months with endless love.<br />
+        Heres to us my pookie, my dearest soul,<br />
+        Together forever - our love, completely whole. 💖
+      </p>
+    </section>
+
+    <!-- Floating Hearts Animation -->
+    <div class="hearts">
+      <div class="heart small" style="left: 20%; animation-delay: 0s"></div>
+      <div class="heart large" style="left: 40%; animation-delay: 2s"></div>
+      <div class="heart" style="left: 70%; animation-delay: 4s"></div>
+      <div class="heart small" style="left: 60%; animation-delay: 6s"></div>
+    </div>
+
+    <section class="message">
+        <button onclick="revealMessage()">Click here for a surprise message</button>
+        <p id="hiddenMessage" style="display:none; margin-top: 20px;">Happy 5-Month Anniversary, My Love! <br><br>
+
+            I can hardly believe its already been five months since we embarked on this incredible journey together. Every single day with you has been a treasure, filled with joy, laughter, and moments that have left an indelible mark on my heart you have brought so much happiness into my life, and i find myself constantly amazed by your kindness, your strength, and the beautiful way you see the world. <br><br>
+            
+            From our late night conversations to the quiet moments we share every second spent with you feels special. I cherish the way we can talk about anything and everything or simply enjoy the comfort of each others presence in silence. Its in these moments that I truly realize how lucky I am to have you by my side. <br><br>
+            
+            Reflecting on the memories we have created, I smile thinking of our adventures—whether its exploring new places, cozying up for a movie, or just having fun on those spontaneous outings. Each experience, big or small, has woven us closer together, and I look forward to countless more adventures in the future. <br><br>
+            
+            Thank you for being you for your laughter that brightens my darkest days, your unwavering support, and the love that radiates from your very being. You inspire me to be a better person, and Im grateful for every moment we share. I cant wait to see what the future holds for us, but one thing is certain I want you to be a part of it. <br><br>
+            
+            So heres to us, to the beautiful moments we have had, and to the many more that are yet to come. I love you more than words can express, and I am so excited to continue this journey with you. Happy anniversary, my love!</p>
+        <div class="confetti" id="confetti">
+            <div style="--x: 0.2;"></div>
+            <div style="--x: 0.4;"></div>
+            <div style="--x: 0.6;"></div>
+            <div style="--x: 0.8;"></div>
+            <div style="--x: 1.0;"></div>
+        </div>
+    </section>
+    
+    <footer>
+      <p>I love you more each day ❤️</p>
+    </footer>
+
+    <script>
+        // Countdown calculation
+        const startDate = new Date("May 15, 2024 00:00:00").getTime();
+        setInterval(() => {
+            const now = new Date().getTime();
+            const elapsed = now - startDate;
+            const days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
+            
+            // Adding a span to change the color of 'Together'
+            document.getElementById("countdown").innerHTML = `<span style="color: #ff6347;">Together for ${days} days, ${hours} hours, and ${minutes} minutes! </span>`;
+        }, 1000);
+    
+        // Reveal hidden message and trigger confetti and fireworks
+function revealMessage() {
+    // Show hidden message
+    document.getElementById("hiddenMessage").style.display = "block";
+    
+    // Trigger confetti
+    document.getElementById("confetti").style.display = "block";
+    const confettiElements = document.querySelectorAll(".confetti div");
+    confettiElements.forEach(confetti => {
+        confetti.style.animation = "fall 5s linear infinite";
+    });
+
+    // Trigger fireworks
+    startFireworks();
+}
+
+
+    </script>
+    
+    </script>
+  </body>
+</html>
